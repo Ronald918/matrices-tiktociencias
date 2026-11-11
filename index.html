@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiktociencias - Matrices en Acción</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🧮 MATRICES EN ACCIÓN</h1>
+        <p>Aprende Álgebra Lineal transformando imágenes</p>
+    </header>
+
+    <main>
+        <div class="panel-controles">
+            <label class="btn-upload">
+                📁 Subir mi imagen
+                <input type="file" id="upload" accept="image/*">
+            </label>
+            <button id="reset">⟲ Restaurar</button>
+        </div>
+
+        <div class="contenedor-principal">
+            <!-- SECCIÓN IZQUIERDA: Las Imágenes -->
+            <div class="seccion-imagenes">
+                <div class="canvas-wrapper">
+                    <h2>1. Imagen Original</h2>
+                    <p class="instruccion">Pasa el mouse por encima para ver los píxeles</p>
+                    <div class="canvas-container">
+                        <canvas id="originalCanvas"></canvas>
+                        <!-- Etiqueta flotante para el mouse -->
+                        <div id="tooltipPixel" class="tooltip">x: 0, y: 0</div>
+                    </div>
+                </div>
+                <div class="canvas-wrapper">
+                    <h2>2. Imagen Transformada</h2>
+                    <p class="instruccion">Así se ve después de aplicar la matriz</p>
+                    <canvas id="resultCanvas"></canvas>
+                </div>
+            </div>
+
+            <!-- SECCIÓN DERECHA: El Laboratorio Interactivo -->
+            <div class="seccion-laboratorio">
+                <div class="cabecera-lab">
+                    <h3>🔬 Laboratorio Interactivo</h3>
+                    <p>Arrastra los valores para deformar la imagen</p>
+                </div>
+
+                <div class="panel-sliders">
+                    <!-- Slider A -->
+                    <div class="slider-group">
+                        <label>a (Eje X): <span id="val-a">1.0</span></label>
+                        <input type="range" id="slider-a" min="-2" max="2" step="0.1" value="1">
+                    </div>
+                    <!-- Slider B -->
+                    <div class="slider-group">
+                        <label>b (Inclinación X): <span id="val-b">0.0</span></label>
+                        <input type="range" id="slider-b" min="-2" max="2" step="0.1" value="0">
+                    </div>
+                    <!-- Slider C -->
+                    <div class="slider-group">
+                        <label>c (Inclinación Y): <span id="val-c">0.0</span></label>
+                        <input type="range" id="slider-c" min="-2" max="2" step="0.1" value="0">
+                    </div>
+                    <!-- Slider D -->
+                    <div class="slider-group">
+                        <label>d (Eje Y): <span id="val-d">1.0</span></label>
+                        <input type="range" id="slider-d" min="-2" max="2" step="0.1" value="1">
+                    </div>
+                </div>
+
+                <!-- Matriz Visual -->
+                <div class="caja-matriz">
+                    <pre id="matrizTexto">[ 1.0   0.0 ]\n[ 0.0   1.0 ]</pre>
+                </div>
+
+                <!-- Panel de Determinante -->
+                <div class="panel-info" id="panelDeterminante">
+                    <h4>Determinante (Det): <span id="val-det">1.00</span></h4>
+                    <p id="mensaje-det">La imagen mantiene su tamaño original.</p>
+                </div>
+
+                <!-- Explicación Matemática en Vivo -->
+                <div class="panel-info">
+                    <h4>¿Qué está pasando?</h4>
+                    <p class="formula-viva">
+                        x' = (<span class="color-a">a</span> * x) + (<span class="color-b">b</span> * y)<br>
+                        y' = (<span class="color-c">c</span> * x) + (<span class="color-d">d</span> * y)
+                    </p>
+                </div>
+
+                <button id="btnQuizas" class="btn-magico">✨ Aplicar Transformación Aleatoria</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Courier New', monospace; }
+
+body {
+    background-color: #0a0a0f;
+    color: #00ffcc;
+    padding: 20px;
+    text-align: center;
+    min-height: 100vh;
+}
+
+header h1 { font-size: 2.2rem; text-shadow: 0 0 10px #00ffcc; margin-bottom: 5px; }
+header p { color: #ff00ff; text-shadow: 0 0 5px #ff00ff; margin-bottom: 20px; }
+
+.panel-controles {
+    background: #12121a;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #00ffcc;
+    display: inline-flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btn-upload {
+    background: #00ffcc;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.btn-upload input { display: none; }
+
+button {
+    background: transparent;
+    color: #00ffcc;
+    border: 2px solid #00ffcc;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+button:hover { background: #00ffcc; color: #000; }
+
+.contenedor-principal { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+
+/* Imágenes */
+.seccion-imagenes { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+.canvas-wrapper { text-align: center; }
+.canvas-wrapper h2 { font-size: 1.1rem; margin-bottom: 5px; color: #ff00ff; }
+.instruccion { font-size: 0.8rem; color: #888; margin-bottom: 10px; }
+.canvas-container { position: relative; display: inline-block; }
+canvas { border: 2px solid #333; border-radius: 5px; max-width: 350px; max-height: 350px; background: #000; box-shadow: 0 0 10px rgba(0, 255, 204, 0.2); }
+
+/* Tooltip del Mouse */
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #00ffcc;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    pointer-events: none; /* Para que no interrumpa el mouse */
+    display: none;
+    border: 1px solid #00ffcc;
+}
+
+/* Laboratorio Derecha */
+.seccion-laboratorio {
+    background: #12121a;
+    border: 1px solid #ff00ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+    width: 380px;
+    text-align: left;
+}
+.seccion-laboratorio h3 { color: #ff00ff; margin-bottom: 5px; text-align: center; }
+.cabecera-lab p { font-size: 0.8rem; color: #aaa; text-align: center; margin-bottom: 15px; }
+
+.slider-group { margin-bottom: 12px; }
+.slider-group label { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 5px; }
+.slider-group label span { font-weight: bold; color: #fff; }
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px; width: 16px;
+    border-radius: 50%;
+    background: #00ffcc;
+    cursor: pointer;
+    margin-top: -6px;
+    box-shadow: 0 0 10px #00ffcc;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%; height: 4px;
+    cursor: pointer;
+    background: #333;
+    border-radius: 2px;
+}
+
+.caja-matriz { background: #000; padding: 15px; border-radius: 5px; text-align: center; margin: 15px 0; border: 1px solid #333; }
+#matrizTexto { font-size: 1.8rem; color: #fff; text-shadow: 0 0 10px #fff; }
+
+.panel-info { background: #1a1a2e; padding: 15px; border-radius: 5px; margin-bottom: 15px; border-left: 4px solid #00ffcc; }
+.panel-info h4 { color: #00ffcc; margin-bottom: 8px; font-size: 1rem; }
+.panel-info p { font-size: 0.9rem; color: #ccc; line-height: 1.4; }
+
+#panelDeterminante { border-left-color: #ff00ff; }
+#panelDeterminante h4 { color: #ff00ff; }
+#mensaje-det { color: #fff; font-weight: bold; }
+
+.formula-viva { font-size: 1.1rem !important; color: #fff !important; text-align: center; margin-top: 10px; }
+.color-a { color: #ff00ff; font-weight: bold; }
+.color-b { color: #00ffcc; font-weight: bold; }
+.color-c { color: #ffff00; font-weight: bold; }
+.color-d { color: #ff5555; font-weight: bold; }
+
+.btn-magico { width: 100%; margin-top: 10px; border-color: #ff00ff; color: #ff00ff; }
+.btn-magico:hover { background: #ff00ff; color: #000; }
